@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم البوت</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .option {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: right;
+        }
+        .option:last-child {
+            border-bottom: none;
+        }
+        .option button {
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option button:hover {
+            background: #cc0000;
+        }
+        .sub-option {
+            padding-right: 20px;
+            margin-top: 10px;
+            border-right: 2px solid #4CAF50;
+        }
+        .add-option {
+            margin-top: 20px;
+        }
+        .add-option input, .add-option textarea {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: calc(100% - 20px);
+        }
+        .add-option button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-option button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>لوحة تحكم البوت</h1>
+    <div class="container">
+        <h2>الخيارات الحالية</h2>
+        <div id="options-list"></div>
+        <div class="add-option">
+            <h2>إضافة خيار جديد</h2>
+            <input type="text" id="option-id" placeholder="رقم الخيار (مثال: 1)">
+            <input type="text" id="option-label" placeholder="عنوان الخيار (مثال: خدمات الإعلانات)">
+            <textarea id="option-response" placeholder="الرد على الخيار"></textarea>
+            <div id="sub-options-container"></div>
+            <button onclick="addSubOptionField()">إضافة خيار فرعي</button>
+            <button onclick="addOption()">إضافة خيار رئيسي</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
